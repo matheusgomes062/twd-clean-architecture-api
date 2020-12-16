@@ -16,8 +16,13 @@ describe('Email validation', () => {
     expect(Email.validate(email)).toBeTruthy()
   })
 
-  test('should accept local part larger than 64 chars', () => {
+  test('should not accept local part larger than 64 chars', () => {
     const email = `${'l'.repeat(65)}@email.com`
+    expect(Email.validate(email)).toBeFalsy()
+  })
+
+  test('should not accept string larger than 320 chars', () => {
+    const email = `${'l'.repeat(159)}@${'d'.repeat(80)}.${'d'.repeat(80)}`
     expect(Email.validate(email)).toBeFalsy()
   })
 })

@@ -2,17 +2,17 @@ import { Either, left, right } from '../../shared/either'
 import { InvalidEmailError } from './errors/invalid-email-error'
 
 export class Email {
-  private readonly value: string
+  public readonly value: string
 
   private constructor (email: string) {
     this.value = email
   }
 
-  public static create (email: string): Either<InvalidEmailError, Email> {
+  static create (email: string): Either<InvalidEmailError, Email> {
     if (Email.validate(email)) {
       return right(new Email(email))
     }
-    return left(new InvalidEmailError())
+    return left(new InvalidEmailError(email))
   }
 
   static validate (email: string): boolean {
@@ -40,10 +40,10 @@ export class Email {
     if (domain.length > 255 || domain.length === 0) {
       return false
     }
-
     const domainParts = domain.split('.')
-
-    if (domainParts.some(part => part.length > 63)) {
+    if (domainParts.some(function (part) {
+      return part.length > 63
+    })) {
       return false
     }
 

@@ -28,13 +28,13 @@ describe('Register user on maling list use case', () => {
     expect(response.name).toEqual('InvalidEmailError')
   })
 
-  test('should not add user with invalid name to mailing list', async () => {
+  test('should not add user with invalid name to maling list', async () => {
     const users: UserData[] = []
     const repo: UserRepository = new InMemoryUserRepository(users)
     const usecase: RegisterUserOnaMailingList = new RegisterUserOnaMailingList(repo)
-    const invalidName = ''
-    const email = 'any@email.com'
-    const response = (await usecase.RegisterUserOnaMailingList({ name: invalidName, email: email })).value as Error
+    const invalidname = ''
+    const email = 'any@mail.com'
+    const response = (await usecase.RegisterUserOnaMailingList({ name: invalidname, email: email })).value as Error
     const user = await repo.findUserByEmail(email)
     expect(user).toBeNull()
     expect(response.name).toEqual('InvalidNameError')

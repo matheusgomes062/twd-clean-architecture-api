@@ -1,4 +1,4 @@
-import { Email } from '../../src/use-cases/entitites/email'
+import { Email } from '../../src/entitites/email'
 
 describe('Email validation', () => {
   test('should not accept null strings', () => {
@@ -17,22 +17,22 @@ describe('Email validation', () => {
   })
 
   test('should not accept local part larger than 64 chars', () => {
-    const email = `${'l'.repeat(65)}@email.com`
+    const email = `${'l'.repeat(64)}@${'d'.repeat(128)}.${'d'.repeat(127)}`
     expect(Email.validate(email)).toBeFalsy()
   })
 
-  test('should not accept string larger than 320 chars', () => {
-    const email = `${'l'.repeat(159)}@${'d'.repeat(80)}.${'d'.repeat(80)}`
-    expect(Email.validate(email)).toBeFalsy()
-  })
-
-  test('should not accept domain larger than 255 chars', () => {
+  test('should not accept a domain larger than 255 chars', () => {
     const email = `local@${'d'.repeat(128)}.${'d'.repeat(127)}`
     expect(Email.validate(email)).toBeFalsy()
   })
 
-  test('should not accept empty local part', () => {
-    const email = '@email.com'
+  test('should not accept a local larger than 64', () => {
+    const email = `${'l'.repeat(65)}@mail.com`
+    expect(Email.validate(email)).toBeFalsy()
+  })
+
+  test('should not accept an empty local', () => {
+    const email = '@mail.com'
     expect(Email.validate(email)).toBeFalsy()
   })
 
@@ -46,8 +46,8 @@ describe('Email validation', () => {
     expect(Email.validate(email)).toBeFalsy()
   })
 
-  test('should not accept local part with invalid chars', () => {
-    const email = 'any email@email.com'
+  test('should not accept local part with invalid characters', () => {
+    const email = 'any @email.com'
     expect(Email.validate(email)).toBeFalsy()
   })
 
@@ -56,7 +56,7 @@ describe('Email validation', () => {
     expect(Email.validate(email)).toBeFalsy()
   })
 
-  test('should not accept local part with ending dots', () => {
+  test('should not accept local part with "." before "@"', () => {
     const email = 'any.@email.com'
     expect(Email.validate(email)).toBeFalsy()
   })

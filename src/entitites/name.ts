@@ -1,4 +1,4 @@
-import { Either, left, right } from '../../shared/either'
+import { Either, left, right } from '../shared/either'
 import { InvalidNameError } from './errors/invalid-name-error'
 
 export class Name {
@@ -19,7 +19,6 @@ export class Name {
     if (!name) {
       return false
     }
-
     if (name.trim().length < 2 || name.trim().length > 256) {
       return false
     }

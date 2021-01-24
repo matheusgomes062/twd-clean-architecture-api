@@ -1,4 +1,4 @@
-import { Email } from '../../src/entitites/email'
+import { Email } from '../../src/entitites'
 
 describe('Email validation', () => {
   test('should not accept null strings', () => {

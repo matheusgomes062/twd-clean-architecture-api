@@ -1,7 +1,7 @@
 {
-  "name": "twd-clean-architecture-api",
+  "name": "unifesp_cleanarchitecture",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repositório com finalidade de armazenar as atividades práticas do curso de Clean Architecture",
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
@@ -9,13 +9,18 @@
     "test-unit": "npm test -- --watch -c jest-unit-config.js",
     "test-integration": "npm test -- --watch -c jest-integration-config.js",
     "test-staged": "npm test -- --findRelatedTests",
-    "test-ci": "npm test -- --coverage",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "yarn lint --fix"
+    "test-cli": "npm test -- --coverage"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielSalis/UNIFESP_cleanArchitecture.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielSalis/UNIFESP_cleanArchitecture/issues"
+  },
+  "homepage": "https://github.com/DanielSalis/UNIFESP_cleanArchitecture#readme",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.9",

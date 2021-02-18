@@ -4,6 +4,7 @@
   "description": "Repositório com finalidade de armazenar as atividades práticas do curso de Clean Architecture",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/main/server.js",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test-verbose": "jest --passWithNoTests --runInBand",
     "test-unit": "npm test -- --watch -c jest-unit-config.js",

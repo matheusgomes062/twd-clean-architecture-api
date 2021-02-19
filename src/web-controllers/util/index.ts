@@ -1,1 +1,1 @@
-export * from './http-helper'
+export * from '@/web-controllers/util/http-helper'

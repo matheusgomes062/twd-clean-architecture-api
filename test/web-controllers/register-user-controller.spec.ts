@@ -1,9 +1,9 @@
 import { HttpResponse, HttpRequest } from '@/web-controllers/ports'
 
-import { RegisterUserOnMailingList } from '@/usecases/register-user-on-maling-list'
+import { RegisterUserOnMailingList } from '@test/usecases/register-user-on-mailing-list/node_modules/@/usecases/register-user-on-mailing-list'
 import { UserData } from '@/entities'
-import { UserRepository } from '@/usecases/register-user-on-maling-list/ports'
-import { InMemoryUserRepository } from '@test/usecases/register-user-on-maling-list/repository'
+import { UserRepository } from '@/usecases/register-user-on-mailing-list/ports'
+import { InMemoryUserRepository } from '@test/usecases/register-user-on-mailing-list/repository'
 import { RegisterUserController } from '@/web-controllers/register-user-controller'
 import { InvalidEmailError, InvalidNameError } from '@/entities/errors'
 import { MissingParamError } from '@/web-controllers/errors/missing-param-error'

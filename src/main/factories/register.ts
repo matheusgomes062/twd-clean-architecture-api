@@ -1,5 +1,5 @@
 import { RegisterUserController } from '@/web-controllers'
-import { RegisterUserOnMailingList } from '@/usecases/register-user-on-mailing-list'
+import { RegisterUserOnMailingList } from '@test/usecases/register-user-on-mailing-list/node_modules/@/usecases/register-user-on-mailing-list'
 import { InMemoryUserRepository } from '@/usecases/register-user-on-mailing-list/repositorty'
 
 export const makeRegisterUserController = (): RegisterUserController => {

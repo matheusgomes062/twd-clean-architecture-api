@@ -1,7 +1,7 @@
 {
-  "name": "unifesp_cleanarchitecture",
+  "name": "twd-clean-architecture-api",
   "version": "1.0.0",
-  "description": "Repositório com finalidade de armazenar as atividades práticas do curso de Clean Architecture",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node dist/main/server.js",
@@ -13,16 +13,8 @@
     "test-staged": "npm test -- --findRelatedTests",
     "test-cli": "npm test -- --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DanielSalis/UNIFESP_cleanArchitecture.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DanielSalis/UNIFESP_cleanArchitecture/issues"
-  },
-  "homepage": "https://github.com/DanielSalis/UNIFESP_cleanArchitecture#readme",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.9",
